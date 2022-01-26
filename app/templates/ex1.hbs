@@ -1,0 +1,23 @@
+{{page-title "Ex1"}}
+
+<style>
+
+  div.groove {
+    border-style: groove;
+  }
+</style>
+<div class="groove">
+  <div class="badge bg-primary text-wrap" style="width: 6rem;">Note application</div>
+  <br>
+  <div class="form-floating">
+    <Textarea @value={{this.content}} class="form-control" maxlength=100 id="floatingTextarea" />
+    <label for="floatingTextarea">commentaire</label>
+  </div>
+
+  <button type="button" class="btn btn-primary" {{on "click" this.save}}>Enregister</button>
+  <button type="button" class="btn btn-primary" {{ on "click" this.clear}}>Effacer</button>
+  <p>Nombre de lettres : {{this.size}}</p>
+  <div class={{this.style}} role="alert">zone de danger</div>
+</div>
+
+{{outlet}}

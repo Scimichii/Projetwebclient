@@ -25,6 +25,13 @@ export default class Ex1Controller extends Controller {
     return this.MAX - this.content.length;
   }
 
+  get modif() {
+    if (this.info === this.content && this.content !== '') {
+      return '';
+    }
+    return 'Note modifiée';
+  }
+
   @action
   clear() {
     this.content = '';

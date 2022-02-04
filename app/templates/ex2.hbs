@@ -1,0 +1,15 @@
+{{page-title "Ex2"}}
+<div class = "container-sm">
+<h1> SERVICES</h1>
+<h2>  {{ plural @model.countActive "aucune service selectionner" "1 services selectionner  " " services selectionner  "}}</h2>
+<ul class = "list-group">
+    {{#each @model.products as |product|}}
+      <li class = "list-group-item {{if product.active "active"}}" {{action "toggleActive" product }}>
+    {{product.name}}-{{product.active}}-{{product.price}}€
+
+  </li>
+    {{/each}}
+  <p> Total: {{@model.sumActive}}€</p>
+</ul>
+</div>
+{{outlet}}

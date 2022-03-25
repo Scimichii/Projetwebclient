@@ -1,6 +1,55 @@
 {{page-title "Order"}}
+<div class="column">
+  <div class="ui attached segment" style="background-color: black;"><p style="color: white;">{{ @model.user.name }}({{ @model.user.email }})</p></div>
+  <br>
+</div>
+<td> <div class="ui progress">{{@model.dateCreation}}</div></td>
+<div class="column">
+    <table class="ui table">
+      <thead>
+      <tr>
+        <th>Produit</th>
+        <th>Prix</th>
+        <th>Quantité</th>
+        <th>Montant</th>
+        <th>Statut</th>
+      </tr>
+      </thead>
 
+      <tbody>
+      {{#each @model.orderdetails as |order|}}
+        <tr>
+          <td>{{ order.product.name }}</td>
+          <td>{{order.product.price}}€</td>
+          <td>{{ order.quantity }}</td>
+          <td>{{ order.amount}}</td>
+          <td><div class="ui toggle checkbox">
+            <input type="checkbox" name="public">
+            <label></label>
+          </div>
+          </td>
+        </tr>
+      {{/each}}
 
+      </tbody>
 
+    </table>
+  <div class="ui attached segment"><p style="color: black; margin-left: 980px;">{{ @model.amount }}€</p>
+    <p style="color: black; margin-left: 1500px;">{{ @model.toPay }}€</p>
 
+  </div>
+</div>
+<br>
+
+<div class="column">
+  <div class="ui attached segment"><p style="color: black;">Produit préparéé</p></div>
+    <div class="ui divided list">
+      <div class="item">
+          <div class="bar">
+            <div class="progress"></div>
+          </div>
+        <LinkTo class="ui button mini" @route="board">Valider Commande</LinkTo>
+      </div>
+    </div>
+</div>
 {{outlet}}

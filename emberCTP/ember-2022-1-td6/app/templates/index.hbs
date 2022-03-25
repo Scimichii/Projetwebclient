@@ -3,10 +3,11 @@
   <h1> Connexion</h1>
 <form class = "ui form" {{action "login" @model on="submit"}}>
   <div class="field">
-  <Input type="email" @value={{@model.email}} placeholder="Votre email" />
+    <i class ="user icon"></i>
+  <Input type="email" @value={{@model.email}} placeholder="Votre email"  required />
   </div>
   <div class="field">
-  <Input type="password" @value={{@model.password}} placeholder=" Votre mot de passe" />
+  <Input type="password" @value={{@model.password}} placeholder=" Votre mot de passe"  required />
   </div>
 
   <button class = "ui secondary button" style = "text-align: center; margin-top:10px; width: 100%; "  type="submit">Se connecter</button>

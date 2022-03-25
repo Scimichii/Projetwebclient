@@ -9,4 +9,5 @@ export default class OrderRoute extends Abstractroute {
       include: 'orderdetails.product,user',
     });
   }
+
 }

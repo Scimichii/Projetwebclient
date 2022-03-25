@@ -22,11 +22,9 @@
           <td>{{ order.product.name }}</td>
           <td>{{order.product.price}}€</td>
           <td>{{ order.quantity }}</td>
-          <td>{{ order.amount}}</td>
-          <td><div class="ui toggle checkbox">
-            <input type="checkbox" name="public">
-            <label></label>
-          </div>
+          <td>{{ order.amount}}€</td>
+          <td>
+            <Input @type="checkbox" @checked={{order.prepared}} />
           </td>
         </tr>
       {{/each}}
@@ -34,9 +32,8 @@
       </tbody>
 
     </table>
-  <div class="ui attached segment"><p style="color: black; margin-left: 980px;">{{ @model.amount }}€</p>
-    <p style="color: black; margin-left: 1500px;">{{ @model.toPay }}€</p>
-
+  <div class="ui attached segment"><p style="color: black; margin-left: 1300px;">{{ @model.amount }}€</p>
+    <p style="color: black; margin-left: 1550px;">{{ @model.toPay }}€</p>
   </div>
 </div>
 <br>

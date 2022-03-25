@@ -21,11 +21,15 @@ export default class IndexRoute extends Route {
         if (employees.length) {
           let connected = employees.firstObject;
           if (connected.password && connected.password === user.password) {
+            if (connected.email && connected.email === user.email){
+
+
             this.userAuth.login(connected);
             this.transitionTo('board');
           }
+          }
           else {
-              document.getElementById("erreur").innerHTML = "Erreur authentification";
+              document.getElementById("erreur").innerHTML = "Erreur d'authentification";
           }
         }
       });

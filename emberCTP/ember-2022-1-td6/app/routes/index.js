@@ -29,7 +29,8 @@ export default class IndexRoute extends Route {
           }
           }
           else {
-              document.getElementById("erreur").innerHTML = "Erreur d'authentification";
+            document.getElementById('erreur').innerHTML =
+              "Erreur d'authentification";
           }
         }
       });

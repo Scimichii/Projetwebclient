@@ -1,7 +1,19 @@
 {{page-title "Index"}}
-<form {{action "login" @model on="submit"}}>
+<div class="ui green segment">
+  <h1> Connexion</h1>
+<form class = "ui form" {{action "login" @model on="submit"}}>
+  <div class="field">
   <Input type="email" @value={{@model.email}} placeholder="Votre email" />
-  <Input type="password" @value={{@model.password}} placeholder="Votre mot de passe" />
-  <button type="submit">Se connecter</button>
+  </div>
+  <div class="field">
+  <Input type="password" @value={{@model.password}} placeholder=" Votre mot de passe" />
+  </div>
+
+  <button class = "ui secondary button" style = "text-align: center; margin-top:10px; width: 100%; "  type="submit">Se connecter</button>
 </form>
+</div>
+<div id = "erreur">
+
+
+</div>
 {{outlet}}

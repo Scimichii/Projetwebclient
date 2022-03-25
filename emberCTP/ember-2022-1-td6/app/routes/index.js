@@ -24,6 +24,9 @@ export default class IndexRoute extends Route {
             this.userAuth.login(connected);
             this.transitionTo('board');
           }
+          else {
+              document.getElementById("erreur").innerHTML = "Erreur authentification";
+          }
         }
       });
   }
